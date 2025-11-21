@@ -23,7 +23,7 @@ def dbs_prediction():
     print(q)
     model = joblib.load("dbs.pkl")
     r= model.predict([[q]])
-    return(render_template("dbs_prediction.html",r=r))
+    return(render_template("dbs_prediction.html",r=r[0][0]))
 
 if __name__ == "__main__":
-    app.run(port=2340)
+    app.run(port=1244)
